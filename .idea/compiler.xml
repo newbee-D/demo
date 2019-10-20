@@ -9,6 +9,8 @@
         <module name="core" />
         <module name="common" />
         <module name="server" />
+        <module name="demo-common" />
+        <module name="demo-core" />
       </profile>
     </annotationProcessing>
   </component>
