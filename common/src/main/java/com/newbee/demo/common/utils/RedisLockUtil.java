@@ -23,7 +23,8 @@ public class RedisLockUtil {
     private RedisTemplate<String, String> redisTemplate;
 
     /**
-     * 手动调用拉取油品数据锁
+     * eg
+     *
      */
     public void manualFlushDataLock(String key, String value, long time, TimeUnit timeUnit){
         getLock(key, value, time, timeUnit);

@@ -52,6 +52,14 @@ public class Result<T> {
         return new Result(errorCode, errorMsg, Status.ERROR);
     }
 
+    public Result success() {
+        return new Result();
+    }
+
+    public Result success(T content) {
+        return new Result(content);
+    }
+
     /**
      * 状态枚举
      */

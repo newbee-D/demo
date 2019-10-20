@@ -1,5 +1,7 @@
 package com.newbee.demo.core.enums;
 
+import com.newbee.demo.core.handle.extend.AdminHandle;
+import com.newbee.demo.core.handle.extend.OrdinaryHandle;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -11,7 +13,8 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum UserTypeEnum {
-    ORDINARY("普通用户"),
-    ADMIN("管理员");
+    ORDINARY("普通用户", OrdinaryHandle.class),
+    ADMIN("管理员", AdminHandle.class);
     private String desc;
+    private Class handleClazz; //处理器
 }
