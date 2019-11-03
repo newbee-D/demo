@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author dingjiasheng@sinoiov.com
  * @date 2019/10/20 22:06
- * @description 容器启动后执行某些操作
+ * @description spring事件
  */
 @Slf4j
 @Component
