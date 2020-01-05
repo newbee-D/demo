@@ -1,5 +1,6 @@
 package com.newbee.demo.core.mq.receiver;
 
+import com.newbee.demo.core.mq.common.BaseReceiver;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -16,7 +17,7 @@ import javax.annotation.Resource;
  */
 @Slf4j
 @Component
-public class TestReceiver {
+public class TestReceiver extends BaseReceiver {
 
     @Resource
     private TaskExecutor taskExecutor;
@@ -25,25 +26,19 @@ public class TestReceiver {
     @RabbitListener(queues = "${test.queue}")
     public void receiveMessage(final String message) {
         log.info("【订单所属项目变更mq】收到mq，内容：{}", message);
-        try {
-            taskExecutor.execute(new Runnable() {
-                public void run() {
-                    try {
-                        TestReceiver.this.handleMq(message);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+        /* 异步消费 */
+        handleMq(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    // todo do someThing
+                } catch (Exception e) {
+                    log.error("【订单所属项目变更mq】订单所属项目变更mq处理失败", e);
+                    //TODO 邮件告警通知消费失败 || 手动ack告知发送者消费失败
                 }
-            });
-        } catch (Exception e) {
-            log.error("【订单所属项目变更mq】订单所属项目变更mq处理失败", e);
-            //TODO 邮件告警通知消费失败 || 手动ack告知发送者消费失败
-        }
-    }
+            }
+        });
 
-    private void handleMq(String message) throws InterruptedException {
-        /* 模拟mq消息处理 */
-        Thread.sleep(5000);
     }
 
 
