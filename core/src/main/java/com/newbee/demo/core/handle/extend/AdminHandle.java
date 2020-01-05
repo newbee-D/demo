@@ -1,10 +1,13 @@
 package com.newbee.demo.core.handle.extend;
 
-import com.alibaba.fastjson.JSON;
+import com.newbee.demo.core.dto.UserListDTO;
 import com.newbee.demo.core.dto.UserListSearchDTO;
 import com.newbee.demo.core.handle.UserHandle;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @author dingjiasheng@sinoiov.com
@@ -13,11 +16,10 @@ import org.springframework.stereotype.Component;
  */
 @Slf4j
 @Component
-public class AdminHandle implements UserHandle {
+public class AdminHandle implements UserHandle<UserListSearchDTO> {
 
-    public void userList(Object obj) {
-        UserListSearchDTO searchDTO = JSON.parseObject(JSON.toJSONString(obj), UserListSearchDTO.class);
-        log.info(JSON.toJSONString(searchDTO) + "调用管理员处理器");
-        //TODO do something
+    public List<UserListDTO> userList(UserListSearchDTO obj) {
+        log.info("调用管理员处理器");
+        return Collections.emptyList();
     }
 }
