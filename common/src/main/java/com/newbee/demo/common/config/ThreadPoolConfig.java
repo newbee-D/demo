@@ -14,6 +14,11 @@ import java.util.concurrent.ThreadPoolExecutor;
  * @author dingjiasheng@sinoiov.com
  * @date 2019/11/3 15:29
  * @description 线程池配置
+ *
+ * <p>
+ *     spring 线程池
+ * </p>
+ *
  */
 @EnableAsync
 @Configuration
