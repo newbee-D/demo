@@ -26,7 +26,7 @@ public class RedisLockUtil {
      * eg
      *
      */
-    public void manualFlushDataLock(String key, String value, long time, TimeUnit timeUnit){
+    public void testLock(String key, String value, long time, TimeUnit timeUnit){
         getLock(key, value, time, timeUnit);
     }
 

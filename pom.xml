@@ -30,6 +30,7 @@
         <lombok.version>1.18.8</lombok.version>
         <spring-boot-starter-web.version>2.1.3.RELEASE</spring-boot-starter-web.version>
         <spring-boot-starter-amqp.version>1.5.2.RELEASE</spring-boot-starter-amqp.version>
+        <reflectasm.version>1.11.0</reflectasm.version>
     </properties>
 
     <dependencies>
@@ -105,6 +106,12 @@
             <artifactId>spring-boot-starter-amqp</artifactId>
             <version>${spring-boot-starter-amqp.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.esotericsoftware</groupId>
+            <artifactId>reflectasm</artifactId>
+            <version>${reflectasm.version}</version>
+        </dependency>
+
 
     </dependencies>
 
