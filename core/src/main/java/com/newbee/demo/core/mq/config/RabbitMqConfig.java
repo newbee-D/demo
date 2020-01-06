@@ -27,9 +27,9 @@ public class RabbitMqConfig {
     @Autowired
     private ExchangeConfig exchangeConfig;
 
-    /** 订单所属项目变更mq绑定 */
+    /** mq绑定 */
     @Bean
-    public Binding bindingProjectCode() {
+    public Binding bindingTest() {
         return BindingBuilder.bind(queueConfig.projectCodeQueue()).to(exchangeConfig.orderExchange()).with(mqConstant.getTestRouteKey());
     }
 
