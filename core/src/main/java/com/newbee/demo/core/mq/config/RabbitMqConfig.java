@@ -41,7 +41,7 @@ public class RabbitMqConfig {
         connectionFactory.setUsername(mqConstant.getUserName());
         connectionFactory.setPassword(mqConstant.getPassword());
         connectionFactory.setVirtualHost(mqConstant.getVirtualHost());
-        connectionFactory.setPublisherConfirms(true); //消息发送到交换机确认
+        connectionFactory.setPublisherConfirms(true); // 消息发送到交换机确认
         connectionFactory.setPublisherReturns(true); // 消息路由到队列确认回调（失败才会触发）
         return connectionFactory;
     }
