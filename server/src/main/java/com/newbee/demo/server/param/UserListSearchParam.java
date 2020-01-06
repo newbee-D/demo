@@ -2,6 +2,7 @@ package com.newbee.demo.server.param;
 
 import lombok.Data;
 
+import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
 /**
@@ -11,9 +12,19 @@ import java.util.Date;
  */
 @Data
 public class UserListSearchParam {
+    /** 用户类型 */
+    @NotBlank(message = "用户类型不能为空")
     private String userType;
+
+    /** 名称 */
     private String userName;
+
+    /** 手机号 */
     private String mobile;
+
+    /** 创建时间-起 */
     private Date startCreateTime;
+
+    /** 创建时间止 */
     private Date endCreate;
 }

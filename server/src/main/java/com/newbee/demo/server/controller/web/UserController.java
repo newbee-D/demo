@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -26,10 +27,11 @@ import java.util.List;
 public class UserController extends BaseController {
 
     @PostMapping("/list")
-    public Result userList(@RequestBody UserListSearchParam param) {
+    public Result userList(@RequestBody @Valid UserListSearchParam param) {
         UserListSearchDTO searchDTO = BeanCopierUtil.copy(param, UserListSearchDTO.class);
-        //根据用户类型获取对应处理器
-        List<UserListDTO> dtoList = UserTypeEnum.valueOf(searchDTO.getUserType()).getHandle().apply(SpringContextUtil.getApplicationContext(), searchDTO);
+        // 根据用户类型自适配处理器
+        List<UserListDTO> dtoList = UserTypeEnum.valueOf(searchDTO.getUserType()).getHandle()
+                .apply(SpringContextUtil.getApplicationContext(), searchDTO);
         return success(BeanCopierUtil.copyList(dtoList, UserListVO.class));
     }
 
