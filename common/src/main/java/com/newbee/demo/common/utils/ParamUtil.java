@@ -17,22 +17,23 @@ public class ParamUtil {
 
     private static final String FIELD_TYPE = "class java.lang.String";
     private static final String CODE_TYPE = "UTF-8";
+
     /**
      * bean String类型参数转码
      */
-    public static Object paramDecode(Object obj){
-        if(obj != null){
-            for(Field field : obj.getClass().getDeclaredFields()){
+    public static Object paramDecode(Object obj) {
+        if (obj != null) {
+            for (Field field : obj.getClass().getDeclaredFields()) {
                 field.setAccessible(true);
-                try{
+                try {
                     if (FIELD_TYPE.equals(field.getGenericType().toString()) &&
-                            field.get(obj) != null){
-                        PropertyDescriptor pd = new PropertyDescriptor(field.getName(),obj.getClass());
+                            field.get(obj) != null) {
+                        PropertyDescriptor pd = new PropertyDescriptor(field.getName(), obj.getClass());
                         Method wM = pd.getWriteMethod();
-                        wM.invoke(obj, URLDecoder.decode(field.get(obj).toString(),CODE_TYPE));
+                        wM.invoke(obj, URLDecoder.decode(field.get(obj).toString(), CODE_TYPE));
                     }
-                }catch (Exception e){
-                    log.error("参数转码失败->{}",e.getMessage());
+                } catch (Exception e) {
+                    log.error("参数转码失败->{}", e.getMessage());
                     return obj;
                 }
             }

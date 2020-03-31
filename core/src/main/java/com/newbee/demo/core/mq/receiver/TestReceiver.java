@@ -12,7 +12,7 @@ import javax.annotation.Resource;
 /**
  * @author dingjiasheng@sinoiov.com
  * @description no time so no fix
- *          消息接受
+ * 消息接受
  * @date 2019/12/31 13:20
  */
 @Slf4j

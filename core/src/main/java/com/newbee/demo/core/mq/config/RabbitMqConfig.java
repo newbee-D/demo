@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * @author dingjiasheng@sinoiov.com
  * @description no time so no fix
- *          mq 配置
+ * mq 配置
  * @date 2019/12/31 11:18
  */
 @Configuration
@@ -27,13 +27,17 @@ public class RabbitMqConfig {
     @Autowired
     private ExchangeConfig exchangeConfig;
 
-    /** mq绑定 */
+    /**
+     * mq绑定
+     */
     @Bean
     public Binding bindingTest() {
         return BindingBuilder.bind(queueConfig.projectCodeQueue()).to(exchangeConfig.orderExchange()).with(mqConstant.getTestRouteKey());
     }
 
-    /** 连接工厂 */
+    /**
+     * 连接工厂
+     */
     @Bean
     public ConnectionFactory connectionFactory() {
         CachingConnectionFactory connectionFactory = new CachingConnectionFactory(mqConstant.getHost());

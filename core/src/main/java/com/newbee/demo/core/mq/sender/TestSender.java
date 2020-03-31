@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author dingjiasheng@sinoiov.com
  * @description no time so no fix
- *              mq发送测试test
+ * mq发送测试test
  * @date 2019/12/31 14:33
  */
 @Slf4j

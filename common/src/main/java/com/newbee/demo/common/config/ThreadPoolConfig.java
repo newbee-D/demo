@@ -16,9 +16,8 @@ import java.util.concurrent.ThreadPoolExecutor;
  * @description 线程池配置
  *
  * <p>
- *     spring 线程池
+ * spring 线程池
  * </p>
- *
  */
 @EnableAsync
 @Configuration

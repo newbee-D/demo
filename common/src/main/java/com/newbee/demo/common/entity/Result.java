@@ -39,7 +39,8 @@ public class Result<T> {
 
     public Result(T content) {
         this.status = Status.SUCCESS;
-        this.content = content;;
+        this.content = content;
+        ;
     }
 
     public Result(String errorCode, String errorMsg, Result.Status status) {

@@ -9,7 +9,7 @@ import java.util.List;
  * @date 2019/10/20 21:52
  * @description 用户处理器
  * <p>
- *     T
+ * T
  * </p>
  */
 public interface UserHandle<T> {

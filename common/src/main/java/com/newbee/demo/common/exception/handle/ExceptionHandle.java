@@ -22,14 +22,16 @@ public class ExceptionHandle {
     @ResponseBody
     public Result handler(Exception e) {
         log.info("系统异常 --> {}", e.getMessage(), e);
-        return Result.error(ErrorCodeEnum.SYSTEM_ERROR.getErrorCode(),ErrorCodeEnum.SYSTEM_ERROR.getErrorMsg());
+        return Result.error(ErrorCodeEnum.SYSTEM_ERROR.getErrorCode(), ErrorCodeEnum.SYSTEM_ERROR.getErrorMsg());
     }
+
     @ExceptionHandler(value = ProjectException.class)
     @ResponseBody
     public Result handler(ProjectException e) {
         log.info("ProjectException --> {}", e.getErrorMsg(), e);
         return Result.error(e.getErrorCode(), e.getErrorMsg());
     }
+
     @ExceptionHandler(BaseException.class)
     @ResponseBody
     public Result handleBaseException(BaseException e) {

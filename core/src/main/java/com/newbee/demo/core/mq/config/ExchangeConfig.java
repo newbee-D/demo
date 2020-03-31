@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * @author dingjiasheng@sinoiov.com
  * @description no time so no fix
- *          交换机配置
+ * 交换机配置
  * @date 2019/12/31 11:31
  */
 @Configuration

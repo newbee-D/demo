@@ -20,7 +20,6 @@ public class RedisConfig {
 
     /**
      * 实例化 RedisTemplate 对象
-     * 
      */
     @Bean
     public RedisTemplate<String, String> redisTemplate() {

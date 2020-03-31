@@ -11,8 +11,9 @@ public class ProjectException extends BaseException {
 
     /**
      * 默认业务异常
+     *
      * @param errorCode 错误码
-     * @param errorMsg 错误消息
+     * @param errorMsg  错误消息
      */
     public ProjectException(String errorCode, String errorMsg) {
         super(errorCode, errorMsg);

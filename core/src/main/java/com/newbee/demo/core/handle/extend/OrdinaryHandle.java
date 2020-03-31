@@ -19,7 +19,7 @@ import java.util.List;
 public class OrdinaryHandle implements UserHandle<UserListSearchDTO> {
 
     public List<UserListDTO> userList(UserListSearchDTO userListSearchDTO) {
-        log.info( "调用普通用户处理器");
+        log.info("调用普通用户处理器");
         return Collections.emptyList();
     }
 }

@@ -33,6 +33,7 @@ public class SpringContextUtil implements ApplicationContextAware {
 
     /**
      * 重写bean方法
+     *
      * @return 返回一个以给定name注册的bean实例
      */
     public static Object getBean(String name) {

@@ -12,7 +12,9 @@ import org.springframework.stereotype.Component;
 @Data
 @Component
 public class MqConstant {
-    /** 基本配置 */
+    /**
+     * 基本配置
+     */
     @Value("${rabbitmq.host}")
     public String host;
 
@@ -28,11 +30,15 @@ public class MqConstant {
     @Value("${rabbitmq.virtual.host}")
     public String virtualHost;
 
-    /** 交换机 */
+    /**
+     * 交换机
+     */
     @Value("${test.rabbitmq.exchange}")
     public String testExchange;
 
-    /** test */
+    /**
+     * test
+     */
     /* 路由规则 */
     @Value("${test.route.key}")
     public String testRouteKey;

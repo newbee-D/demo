@@ -15,5 +15,5 @@ public class UserInfoServiceImpl extends ServiceImpl<UserInfoDao, UserInfo> impl
     // use "baseMapper" to call jdbc
     // example: baseMapper.insert(entity);
     // example: baseMapper.selectByPage(params);
-   
+
 }

@@ -7,7 +7,7 @@ import javax.annotation.Resource;
 /**
  * @author dingjiasheng@sinoiov.com
  * @description no time so no fix
- *              公共消费类
+ * 公共消费类
  * @date 2020/1/5 21:01
  */
 public class BaseReceiver {

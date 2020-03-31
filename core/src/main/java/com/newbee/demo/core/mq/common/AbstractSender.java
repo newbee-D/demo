@@ -13,11 +13,11 @@ import java.util.UUID;
 /**
  * @author dingjiasheng@sinoiov.com
  * @description no time so no fix
- *              通用发送虚类，继承即可
+ * 通用发送虚类，继承即可
  * @date 2019/12/31 13:43
  */
 @Slf4j
-public abstract class AbstractSender implements RabbitTemplate.ReturnCallback,RabbitTemplate.ConfirmCallback {
+public abstract class AbstractSender implements RabbitTemplate.ReturnCallback, RabbitTemplate.ConfirmCallback {
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
@@ -30,11 +30,11 @@ public abstract class AbstractSender implements RabbitTemplate.ReturnCallback,Ra
 
     /**
      * <p>
-     *     失败才会触发
+     * 失败才会触发
      * </p>
      */
     public void returnedMessage(Message message, int replyCode, String replyText, String exchange, String routingKey) {
-        log.warn("消息路由到queue失败，{}",message);
+        log.warn("消息路由到queue失败，{}", message);
         /* 重新发送 */
         CorrelationData correlationId = new CorrelationData(UUID.randomUUID().toString());
         getRabbitTemplate().convertAndSend(exchange, routingKey, message, correlationId);
@@ -44,11 +44,13 @@ public abstract class AbstractSender implements RabbitTemplate.ReturnCallback,Ra
         if (ack) {
             log.info("消息发送成功");
         } else {
-            log.info("消息发送到exchange失败,原因:{}",cause);
+            log.info("消息发送到exchange失败,原因:{}", cause);
         }
     }
 
-    /** 公共发送方法 */
+    /**
+     * 公共发送方法
+     */
     protected void send(Object message) {
         log.info("发送mq：exchange->{},routingKey->{},message->{}", getExchange(), getRouteKey(), JSONObject.toJSONString(message));
         CorrelationData correlationId = new CorrelationData(UUID.randomUUID().toString());

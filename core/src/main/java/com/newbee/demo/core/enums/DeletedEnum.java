@@ -11,8 +11,8 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum DeletedEnum {
-    YES(1,"已删除"),
-    NO(0,"未删除");
+    YES(1, "已删除"),
+    NO(0, "未删除");
 
     private int code;
     private String desc;

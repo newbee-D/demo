@@ -5,25 +5,25 @@
 <mapper namespace="com.newbee.demo.core.dao.UserInfoDao">
 
     <resultMap id="UserInfoRM" type="com.newbee.demo.core.domain.UserInfo">
-		<result property="id" column="id"/>
-		<result property="userId" column="user_id"/>
-		<result property="userType" column="user_type"/>
-		<result property="createTime" column="create_time"/>
-		<result property="createUserId" column="create_user_id"/>
-		<result property="updateTime" column="update_time"/>
-		<result property="userName" column="user_name"/>
-		<result property="mobile" column="mobile"/>
-		<result property="age" column="age"/>
-		<result property="address" column="address"/>
-		<result property="userProvince" column="user_province"/>
-		<result property="userCity" column="user_city"/>
-		<result property="userCountry" column="user_country"/>
-		<result property="deleted" column="deleted"/>
+        <result property="id" column="id"/>
+        <result property="userId" column="user_id"/>
+        <result property="userType" column="user_type"/>
+        <result property="createTime" column="create_time"/>
+        <result property="createUserId" column="create_user_id"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="userName" column="user_name"/>
+        <result property="mobile" column="mobile"/>
+        <result property="age" column="age"/>
+        <result property="address" column="address"/>
+        <result property="userProvince" column="user_province"/>
+        <result property="userCity" column="user_city"/>
+        <result property="userCountry" column="user_country"/>
+        <result property="deleted" column="deleted"/>
     </resultMap>
 
     <!-- all sql columns -->
     <sql id="columns">
-         `id`,`user_id`,`user_type`,`create_time`,`create_user_id`,`update_time`,`user_name`,`mobile`,`age`,`address`,`user_province`,`user_city`,`user_country`,`deleted`
-	</sql>
+        `id`,`user_id`,`user_type`,`create_time`,`create_user_id`,`update_time`,`user_name`,`mobile`,`age`,`address`,`user_province`,`user_city`,`user_country`,`deleted`
+    </sql>
 
 </mapper>

@@ -21,7 +21,7 @@ import java.util.function.BiFunction;
 public enum UserTypeEnum {
 
     ORDINARY((content, searchDTO) -> content.getBean(OrdinaryHandle.class).userList(searchDTO), "普通用户"),
-    ADMIN((content, searchDTO) -> content.getBean(AdminHandle.class).userList(searchDTO),"管理员");
+    ADMIN((content, searchDTO) -> content.getBean(AdminHandle.class).userList(searchDTO), "管理员");
 
     private BiFunction<ApplicationContext, UserListSearchDTO, List<UserListDTO>> handle;
     private String desc;
