@@ -17,7 +17,7 @@
     <properties>
         <camel-swagger-java.scope>test</camel-swagger-java.scope>
         <swagger-annotations.version>2.0.8</swagger-annotations.version>
-        <h2.version>1.4.199</h2.version>
+        <h2.version>2.1.210</h2.version>
         <spring-boot-starter-validation.version>2.1.6.RELEASE</spring-boot-starter-validation.version>
         <spring-boot-starter-test.scope>test</spring-boot-starter-test.scope>
         <kryo.version>4.0.0</kryo.version>
